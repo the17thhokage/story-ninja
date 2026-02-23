@@ -1,0 +1,15 @@
+{
+  "organization_id": "be3db705-fffc-4b56-80ef-f3f6e4df9bad",
+  "project_id": "ffa84e17-82bf-46c0-b2ae-6b91cbe6e845",
+  "project_short_id": "PROJ-5",
+  "project_name": "story-ninja",
+  "project_description": "The idea sells itself. A storybook where a child is the hero. Parents buy millions of them every year. The product never lives up to the premise. Same template storyline with a name swapped in. Generic illustrations that look nothing like the kid. A princess adventure for a five-year-old who only cares about dinosaurs. Three reads, then the drawer.\n\nI wanna create a storybook creator that takes in the likeness of a child so they can see themselves in the story, and then also allow the illustrations to be the child, based on their preferences or what they like. dinosaurs, ninjas, etc.",
+  "repository": {
+    "id": "8f4ecc7b-9ed7-4b2e-a33a-884a9e7bb60c",
+    "owner": "the17thhokage",
+    "name": "story-ninja",
+    "full_name": "the17thhokage/story-ninja",
+    "url": "https://github.com/the17thhokage/story-ninja.git"
+  },
+  "created_at": "2026-02-23T05:10:23.426Z"
+}
