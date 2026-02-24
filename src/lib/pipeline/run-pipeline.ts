@@ -29,6 +29,10 @@ export async function runPipeline(bookId: string, userId: string) {
 
   // Phase 1: Story Generation (skip if pages already exist)
   if (!hasTextReadyOrComplete) {
+    // Clean up any failed pages from a previous attempt before regenerating
+    if (hasPages) {
+      await supabase.from('pages').delete().eq('book_id', bookId);
+    }
     await generateStory(bookId, book);
   }
 
