@@ -23,6 +23,9 @@ export interface Book {
   theme: BookTheme;
   status: BookStatus;
   is_paid: boolean;
+  child_name: string | null;
+  child_age: number | null;
+  photo_paths: string[] | null;
   created_at: string;
   updated_at: string;
 }
