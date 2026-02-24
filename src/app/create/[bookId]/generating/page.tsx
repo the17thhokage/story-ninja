@@ -50,9 +50,10 @@ export default function GeneratingPage() {
     triggerGeneration();
   }, [triggerGeneration]);
 
-  // Poll progress every 3 seconds
+  // Poll progress every 3 seconds, stop when complete or failed
   useEffect(() => {
     let active = true;
+    let interval: ReturnType<typeof setInterval> | null = null;
 
     const poll = async () => {
       try {
@@ -74,6 +75,11 @@ export default function GeneratingPage() {
         } else {
           setError(null);
         }
+
+        // Stop polling when done
+        if (data.book_status === 'complete' || data.book_status === 'failed') {
+          if (interval) clearInterval(interval);
+        }
       } catch {
         // Silently ignore poll errors
       }
@@ -81,11 +87,11 @@ export default function GeneratingPage() {
 
     // Start polling immediately, then every 3 seconds
     poll();
-    const interval = setInterval(poll, 3000);
+    interval = setInterval(poll, 3000);
 
     return () => {
       active = false;
-      clearInterval(interval);
+      if (interval) clearInterval(interval);
     };
   }, [bookId, triggered, retrying]);
 
